@@ -1086,7 +1086,6 @@ u32 interact_bounce_top(struct MarioState *m, UNUSED u32 interactType, struct Ob
 
     if (interaction & INT_ATTACK_NOT_FROM_BELOW) {
         attack_object(o, interaction);
-        bounce_back_from_attack(m, interaction);
 
         if (interaction & INT_HIT_FROM_ABOVE) {
             if (o->oInteractionSubtype & INT_SUBTYPE_TWIRL_BOUNCE) {
