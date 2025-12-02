@@ -652,8 +652,7 @@ static void geo_process_shadow(struct GraphNodeShadow *node) {
         //! put into their appropriate positions, SW just fixed this by making them dissappear
         //! altogether.
         if (gCurGraphNodeHeldObject != NULL) {
-            get_pos_from_transform_mtx(shadowPos, gMatStack[gMatStackIndex],
-                                       *gCurGraphNodeCamera->matrixPtr);
+            vec3f_copy(shadowPos, gCurGraphNodeObject->pos);
             shadowScale = 0.0f;
         } else {
             vec3f_copy(shadowPos, gCurGraphNodeObject->pos);
