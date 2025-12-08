@@ -42,7 +42,7 @@ static const Gfx mat_bowser_f3dlite_material_003[] = {
 	gsDPLoadSync(),
 	gsDPLoadBlock(7, 0, 0, 2047, 256),
 	gsDPPipeSync(),
-	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 8, 0, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
+	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 8, 0, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
 	gsDPSetTileSize(0, 0, 0, 124, 252),
 	gsSPSetLights1(bowser_1_lights),
 	gsSPEndDisplayList(),
