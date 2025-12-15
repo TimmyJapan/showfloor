@@ -17,15 +17,15 @@
 #include "levels/ccm/header.h"
 
 static const LevelScript script_func_local_1[] = {
-    OBJECT(/*model*/ MODEL_PENGUIN,          /*pos*/  7346, -3891,  6186, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00020000, /*bhv*/ bhvSmallPenguin),
-    OBJECT(/*model*/ MODEL_PENGUIN,          /*pos*/  7488, -3891,  6083, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00020000, /*bhv*/ bhvSmallPenguin),
-    OBJECT(/*model*/ MODEL_PENGUIN,          /*pos*/  7863, -3891, -7915, /*angle*/ 0,  90, 0, /*bhvParam*/ 0x00020000, /*bhv*/ bhvSmallPenguin),
+    OBJECT(/*model*/ MODEL_PENGUIN,          /*pos*/  7346, -4096,  6186, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00020000, /*bhv*/ bhvSmallPenguin),
+    OBJECT(/*model*/ MODEL_PENGUIN,          /*pos*/  7488, -4096,  6083, /*angle*/ 0,   0, 0, /*bhvParam*/ 0x00020000, /*bhv*/ bhvSmallPenguin),
+    OBJECT(/*model*/ MODEL_PENGUIN,          /*pos*/  7863, -4096, -7915, /*angle*/ 0,  90, 0, /*bhvParam*/ 0x00020000, /*bhv*/ bhvSmallPenguin),
     OBJECT(/*model*/ MODEL_PENGUIN,          /*pos*/  2147,  4096, -1261, /*angle*/ 0, 180, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvSmallPenguin),
     RETURN(),
 };
 
 static const LevelScript script_func_local_2[] = {
-    OBJECT(/*model*/ MODEL_PENGUIN,          /*pos*/  7296, -3891,  6085, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvTuxiesMother),
+    OBJECT(/*model*/ MODEL_PENGUIN,          /*pos*/  7296, -4096,  6085, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x01000000, /*bhv*/ bhvTuxiesMother),
     OBJECT(/*model*/ MODEL_STAR,             /*pos*/  5625, -3578,  5379, /*angle*/ 0, 0, 0, /*bhvParam*/ 0x00000000, /*bhv*/ bhvStar),
     RETURN(),
 };
