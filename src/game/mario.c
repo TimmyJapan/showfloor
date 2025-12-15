@@ -450,12 +450,12 @@ u32 mario_get_terrain_sound_addend(struct MarioState *m) {
 
                 case SURFACE_HARD:
                 case SURFACE_HARD_NOT_SLIPPERY:
+                case SURFACE_HARD_SLIPPERY:
                 case SURFACE_SWITCH:
                     floorSoundType = 1;
                     break;
 
                 case SURFACE_SLIPPERY:
-                case SURFACE_HARD_SLIPPERY:
                 case SURFACE_NO_CAM_COL_SLIPPERY:
                     floorSoundType = 2;
                     break;
