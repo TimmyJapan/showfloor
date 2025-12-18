@@ -54,10 +54,10 @@ static const Gfx mat_snow_slider_DirtySnowMaterial[] = {
 	gsDPSetTextureImage(G_IM_FMT_RGBA, G_IM_SIZ_16b, 32, ccm_seg7_texture_07001100),
 	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b_LOAD_BLOCK, 0, 0, 7, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0, G_TX_WRAP | G_TX_NOMIRROR, 0, 0),
 	gsDPLoadSync(),
-	gsDPLoadBlock(7, 0, 0, 2047, 128),
+	gsDPLoadBlock(7, 0, 0, 1023, 256),
 	gsDPPipeSync(),
-	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 16, 0, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 6, 0),
-	gsDPSetTileSize(0, 0, 0, 252, 124),
+	gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 8, 0, 0, 0, G_TX_CLAMP | G_TX_NOMIRROR, 5, 0, G_TX_WRAP | G_TX_NOMIRROR, 5, 0),
+	gsDPSetTileSize(0, 0, 0, 124, 124),
 	gsSPSetLights1(snow_slider_lights),
 	gsSPEndDisplayList(),
 };
