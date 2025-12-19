@@ -2062,7 +2062,7 @@ s32 set_mode_c_up(struct Camera *c) {
     if (!(gCameraMovementFlags & CAM_MOVE_C_UP_MODE)) {
         gCameraMovementFlags |= CAM_MOVE_C_UP_MODE;
         store_lakitu_cam_info_for_c_up(c);
-        play_sound_cbutton_up();
+        sCameraSoundFlags &= ~CAM_SOUND_C_UP_PLAYED;
         return 1;
     }
     return 0;
@@ -2258,6 +2258,12 @@ void move_into_c_up(struct Camera *c) {
  */
 s32 mode_c_up_camera(struct Camera *c) {
     UNUSED u8 filler[12];
+
+    // Play a sound when entering C-Up mode
+    if (!(sCameraSoundFlags & CAM_SOUND_C_UP_PLAYED) && !(gObjCutsceneDone)) {
+        play_sound_cbutton_up();
+        sCameraSoundFlags |= CAM_SOUND_C_UP_PLAYED;
+    }
 
     // Zoom in first
     if (gCameraMovementFlags & CAM_MOVING_INTO_MODE) {
