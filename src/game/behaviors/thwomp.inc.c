@@ -1,14 +1,5 @@
 // thwomp.inc.c
 
-void grindel_thwomp_act_idle_at_bottom(void) {
-    if (o->oTimer == 0) {
-        o->oGrindelThwompRandomTimer = random_float() * 10.0f + 20.0f; // [20, 29]
-    }
-    if (o->oTimer > o->oGrindelThwompRandomTimer) {
-        o->oAction = GRINDEL_THWOMP_ACT_RAISE;
-    }
-}
-
 void grindel_thwomp_act_lower(void) {
     o->oVelY += -4.0f;
     o->oPosY += o->oVelY;
@@ -26,15 +17,46 @@ void grindel_thwomp_act_land(void) {
             cur_obj_play_sound_2(SOUND_OBJ_THWOMP);
         }
     }
-    if (o->oTimer >= 10) {
+
+    if (o->oTimer < 10) {
+        s32 offset = 10 - o->oTimer;
+        f32 targetY = o->oHomeY + offset;
+        if (o->oPosY < targetY) {
+            o->oPosY += offset;
+        } else if (o->oPosY > targetY) {
+            o->oPosY -= offset;
+        }
+    } else if (o->oTimer < 20) {
+        s32 offset = (25 - (o->oTimer - 10)) / 5;
+        f32 targetY = o->oHomeY + offset;
+        if (o->oPosY < targetY) {
+            o->oPosY += offset;
+        } else if (o->oPosY > targetY) {
+            o->oPosY -= offset;
+        }
+    }
+
+    if (o->oTimer >= 20) {
+        o->oPosY = o->oHomeY;
         o->oAction = GRINDEL_THWOMP_ACT_IDLE_AT_BOTTOM;
+    }
+}
+
+void grindel_thwomp_act_idle_at_bottom(void) {
+    if (o->oTimer == 0) {
+        o->oGrindelThwompRandomTimer = random_float() * 10.0f + 20.0f;
+    }
+
+    if (o->oTimer > o->oGrindelThwompRandomTimer) {
+        o->oAction = GRINDEL_THWOMP_ACT_RAISE;
     }
 }
 
 void grindel_thwomp_act_idle_at_top(void) {
     if (o->oTimer == 0) {
-        o->oGrindelThwompRandomTimer = random_float() * 30.0f + 10.0f; // [10, 39]
+        o->oGrindelThwompRandomTimer = random_float() * 30.0f + 10.0f;
     }
+    
     if (o->oTimer > o->oGrindelThwompRandomTimer) {
         o->oAction = GRINDEL_THWOMP_ACT_LOWER;
     }
