@@ -546,17 +546,14 @@ void set_camera_shake_from_point(s16 shake, f32 posX, f32 posY, f32 posZ) {
 
         case SHAKE_POS_SMALL:
             set_pitch_shake_from_point(0x80, 0x8, 0x4000, 4000.f, posX, posY, posZ);
-            set_fov_shake_from_point_preset(SHAKE_FOV_SMALL, posX, posY, posZ);
             break;
 
         case SHAKE_POS_MEDIUM:
             set_pitch_shake_from_point(0xC0, 0x8, 0x4000, 6000.f, posX, posY, posZ);
-            set_fov_shake_from_point_preset(SHAKE_FOV_MEDIUM, posX, posY, posZ);
             break;
 
         case SHAKE_POS_LARGE:
             set_pitch_shake_from_point(0x100, 0x8, 0x3000, 8000.f, posX, posY, posZ);
-            set_fov_shake_from_point_preset(SHAKE_FOV_LARGE, posX, posY, posZ);
             break;
     }
 }
