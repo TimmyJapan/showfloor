@@ -4,7 +4,7 @@ void grindel_thwomp_act_idle_at_bottom(void) {
     if (o->oTimer == 0) {
         o->oGrindelThwompRandomTimer = random_float() * 10.0f + 20.0f; // [20, 29]
     }
-
+ 
     if (o->oTimer > o->oGrindelThwompRandomTimer) {
         o->oAction = GRINDEL_THWOMP_ACT_RAISE;
     }
