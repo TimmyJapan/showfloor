@@ -1192,6 +1192,8 @@ u32 interact_pole(struct MarioState *m, UNUSED u32 interactType, struct Object *
 
             mario_stop_riding_and_holding(m);
 
+            lowSpeed = (velConv <= 10.0f);
+
             m->interactObj = o;
             m->usedObj = o;
             m->vel[1] = 0.0f;
