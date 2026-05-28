@@ -1276,15 +1276,15 @@ s32 act_shot_from_cannon(struct MarioState *m) {
             lava_boost_on_wall(m);
             break;
     }
+    
+	m->vel[1] -= 1.35f;
 
-    m->vel[1] -= 1.15f;
-
-    if (m->actionTimer == 45) {
+    if (m->vel[1] < 11.5f) {
         set_mario_action(m, ACT_FLYING, 0);
     }
 
-    if ((m->forwardVel -= 0.05) < 10.0f) {
-        mario_set_forward_vel(m, 10.0f);
+	if ((m->forwardVel -= 0.05) < 0.0f) {
+        mario_set_forward_vel(m, 0.0f);
     }
 
     return FALSE;
